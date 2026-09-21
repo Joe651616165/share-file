@@ -1,0 +1,18 @@
+{
+  "game_001_resolution": {
+    "width": 1280,
+    "height": 592,
+    "aspect_ratio": 2.1622
+  },
+  "game_002_resolution": {
+    "width": 960,
+    "height": 448,
+    "aspect_ratio": 2.1429
+  },
+  "scaling_factors": {
+    "scale_x": 1.3333,
+    "scale_y": 1.3214
+  },
+  "aspect_ratio_relative_difference_pct": 0.89,
+  "scaling_nature": "Near-isometric Scaling (AR discrepancy < 0.9%)"
+}

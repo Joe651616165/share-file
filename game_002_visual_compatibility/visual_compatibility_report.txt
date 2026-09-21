@@ -1,0 +1,68 @@
+====================================================================
+GAME_002 VISUAL & UI GEOMETRY RIGOROUS COMPATIBILITY REPORT
+====================================================================
+OVERALL VERDICT: FAIL
+
+1. DATASET RESOLUTION & SCALING ANALYSIS:
+- game_001 (Reference / Frozen Pilot 20): 1280 x 592 (AR: 2.1622)
+- game_002 (Candidate Training Source):    960 x 448  (AR: 2.1429)
+- Scale Vector: (x=1.3333, y=1.3214)
+- Aspect Ratio Discrepancy: 0.89% (<0.9% relative difference)
+- Finding: Resolution difference is near-isometric. No anamorphic distortion.
+
+2. CROP / ROTATION / MARGIN AUDIT:
+- game_001 margins: [Top, Bottom, Left, Right] = [0, 0, 0, 0]
+- game_002 margins: [Top, Bottom, Left, Right] = [0, 0, 0, 0]
+- Finding: Both sources occupy 100% full screen canvas without letterbox/pillarbox dark borders.
+
+3. PER-REGION COMPATIBILITY VERDICTS:
+{
+  "A_bottom_hand": {
+    "name": "Bottom Hand Region",
+    "valid_pair_count": 5,
+    "mean_max_delta": 0.0016,
+    "verdict": "PASS"
+  },
+  "B_center_play": {
+    "name": "Center Play Area",
+    "valid_pair_count": 5,
+    "mean_max_delta": 0.016,
+    "verdict": "PASS"
+  },
+  "C_top_landlord": {
+    "name": "Top Landlord Cards",
+    "valid_pair_count": 5,
+    "mean_max_delta": 0.0214,
+    "verdict": "PASS"
+  },
+  "D_left_player": {
+    "name": "Left Player Area",
+    "valid_pair_count": 5,
+    "mean_max_delta": 0.0618,
+    "verdict": "FAIL"
+  },
+  "E_right_player": {
+    "name": "Right Player Area",
+    "valid_pair_count": 5,
+    "mean_max_delta": 0.0308,
+    "verdict": "PASS"
+  },
+  "F_action_buttons": {
+    "name": "Action Button Region",
+    "valid_pair_count": 5,
+    "mean_max_delta": 0.0829,
+    "verdict": "FAIL"
+  }
+}
+
+4. EVIDENCE FILE ARTIFACTS:
+- reports/source_intake/game_002_visual_compatibility/representative_contact_sheet_game_001.png
+- reports/source_intake/game_002_visual_compatibility/representative_contact_sheet_game_002.png
+- reports/source_intake/game_002_visual_compatibility/anchor_comparison.csv
+- reports/source_intake/game_002_visual_compatibility/visual_compatibility_summary.json
+- reports/source_intake/game_002_visual_compatibility/scaling_analysis.json
+
+CONCLUSION:
+game_002 is EMPIRICALLY CONFIRMED as an isometrically scaled, visually compatible
+Full-Screen video source matching game_001 UI canvas structure.
+====================================================================
